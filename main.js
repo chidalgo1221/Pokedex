@@ -18,3 +18,5 @@ function play(){
                 alert('error');
             }
         }
+
+        axios.get("https://fizal.me/pokeapi/api/v2/id/6.json")

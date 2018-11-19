@@ -34,6 +34,10 @@ body {
   animation: flip 15s;
 }
 
+#chari{
+  height: 100px;
+}
+
 @-webkit-keyframes tada {
   from {
     -webkit-transform: scale3d(1, 1, 1);

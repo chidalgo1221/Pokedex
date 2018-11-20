@@ -4,6 +4,7 @@ axios.get("https://fizal.me/pokeapi/api/v2/id/6.json")
   console.log(response.data);
   let charizard = new Pokemon(response.data.id, response.data.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.abilities[0].ability.name);
   charizard.sprite()
+  console.log(response.data.stats[3].base_stat);
 });
 
 axios.get("https://fizal.me/pokeapi/api/v2/id/25.json")
@@ -40,17 +41,17 @@ document.getElementById('ray').onclick = function() {
     }
 }
 
-class Trainer{
-  constructor() {
-    this.pokemon = []
-  }
-  all () {
-
-  }
-  get(name) {
-
-  }
-}
+// class Trainer{
+//   constructor() {
+//     this.pokemon = []
+//   }
+//   all () {
+//
+//   }
+//   get(name) {
+//
+//   }
+// }
 class Pokemon{
   constructor(id, name, hp, attack, defense, ability, sprite){
     this.id = id;
@@ -65,6 +66,11 @@ class Pokemon{
     let img = document.createElement('img');
     div.appendChild(img)
     img.src = "http://play.pokemonshowdown.com/sprites/xyani/" + this.name +".gif"
+    document.getElementById('info').innerHTML = this.name;
+    document.getElementById('charihp').innerHTML = this.hp;
+    document.getElementById('chariatt').innerHTML = this.attack;
+    document.getElementById('charidef').innerHTML = this.defense;
+    document.getElementById('chariabi').innerHTML = this.ability;
   }
   sprite2() {
     let div = document.getElementById('pikapika');
@@ -72,6 +78,11 @@ class Pokemon{
     div.appendChild(img)
     img.src = "http://play.pokemonshowdown.com/sprites/xyani/" + this.name +".gif"
     img.id = "pikabolt";
+    document.getElementById('infor').innerHTML = this.name;
+    document.getElementById('pikahp').innerHTML = this.hp;
+    document.getElementById('pikaatt').innerHTML = this.attack;
+    document.getElementById('pikadef').innerHTML = this.defense;
+    document.getElementById('pikaabi').innerHTML = this.ability;
   }
   sprite3() {
     let div = document.getElementById('emp');
@@ -79,6 +90,11 @@ class Pokemon{
     div.appendChild(img)
     img.src = "http://play.pokemonshowdown.com/sprites/xyani/" + this.name +".gif"
     img.id = "iceking";
+    document.getElementById('inform').innerHTML = this.name;
+    document.getElementById('emphp').innerHTML = this.hp;
+    document.getElementById('empatt').innerHTML = this.attack;
+    document.getElementById('empdef').innerHTML = this.defense;
+    document.getElementById('empabi').innerHTML = this.ability;
   }
   // //display(){
   //   let charizardSprite = document.createElement('img');
